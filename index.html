@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copilot for M365 — Day in the Life Hands-On Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="brand-text">
+        <h1>Copilot for Microsoft&nbsp;365</h1>
+        <p>Day-in-the-Life Hands-On Lab</p>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="#roles">Roles</a>
+      <a href="#labs">Labs</a>
+      <a href="#progress">Progress</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="pill">5 Guided Scenarios · 5 Business Roles · 5 M365 Apps</span>
+      <h2>Learn Microsoft 365 Copilot by living a day in the life of real business roles.</h2>
+      <p>Pick a role, open the matching app scenario, and practice with ready-to-use Copilot prompts.
+         Copy a prompt, try it in your own tenant, then mark it complete to track your progress.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#roles">Choose a role</a>
+        <a class="btn btn-ghost" href="#labs">Jump to the labs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Role Selector ===== -->
+  <section id="roles" class="section">
+    <div class="section-head">
+      <h3>1 · Pick your role</h3>
+      <p>Each role maps to a real workday problem solved with Copilot in a specific M365 app.</p>
+    </div>
+    <div class="role-grid" id="roleGrid"><!-- injected by JS --></div>
+  </section>
+
+  <!-- ===== Labs ===== -->
+  <section id="labs" class="section section-alt">
+    <div class="section-head">
+      <h3>2 · Work the scenario</h3>
+      <p>Filter by the role you selected, read the context, then run the 5 prompts in order.</p>
+    </div>
+    <div class="filter-bar" id="filterBar"><!-- injected by JS --></div>
+    <div class="lab-stack" id="labStack"><!-- injected by JS --></div>
+  </section>
+
+  <!-- ===== Progress ===== -->
+  <section id="progress" class="section">
+    <div class="section-head">
+      <h3>3 · Track your progress</h3>
+      <p>Your completed prompts are saved in this browser.</p>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="progress-label"><strong id="progressCount">0</strong> of <span id="progressTotal">25</span> prompts completed</p>
+      <button class="btn btn-ghost" id="resetBtn">Reset progress</button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Built as a hands-on learning platform for Microsoft 365 Copilot. Prompts are examples — adapt them to your own data.</p>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
